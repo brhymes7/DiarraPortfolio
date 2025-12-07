@@ -1,0 +1,119 @@
+/* 3D Canvas Background */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Glass morphism effects */
+body {
+  backdrop-filter: blur(10px);
+}
+
+.hero, .experience, .cta, .portfolio-skills, .portfolio, .skills, footer {
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-theme .wrapper {
+  background: rgba(34, 34, 34, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wrapper:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.5);
+}
+
+/* 3D Button effects */
+.btn, .btn-2 {
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.btn:hover, .btn-2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(33, 150, 243, 0.6);
+}
+
+.btn:active, .btn-2:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+}
+
+/* Hero section 3D effect */
+.hero-pic {
+  box-shadow: 0 10px 40px rgba(33, 150, 243, 0.5);
+  transition: transform 0.5s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-pic:hover {
+  transform: scale(1.1) rotateZ(5deg);
+}
+
+/* Logo container 3D */
+.logo-container a {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.logo-container a:hover {
+  transform: translateY(-5px) rotateY(360deg);
+}
+
+/* Experience cards with depth */
+.experience h2 {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.dark-theme .experience h2 {
+  background: rgba(34, 34, 34, 0.3);
+}
+
+.experience h2:hover {
+  transform: translateZ(20px) scale(1.05);
+}
+
+/* Project images with 3D tilt */
+.project-wrapper img {
+  transition: transform 0.5s ease;
+}
+
+.project-wrapper:hover img {
+  transform: perspective(1000px) rotateY(10deg) rotateX(5deg);
+}
+
+/* Skills section depth */
+article p {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+article p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3);
+}
